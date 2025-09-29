@@ -1,5 +1,5 @@
 # <h1 align="center">Laporan Praktikum Modul X <br> Nama Modul</h1>
-<p align="center">NAMA - NIM</p>
+<p align="center">Hafis Akbar Anugrah - 103112400125</p>
 
 ## Dasar Teori
 
