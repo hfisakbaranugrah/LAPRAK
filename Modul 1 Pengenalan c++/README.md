@@ -1,4 +1,4 @@
-# <h1 align="center">Laporan Praktikum Modul X <br> Nama Modul</h1>
+# <h1 align="center">Laporan Praktikum Modul 1 <br> Pengenalan C++</h1>
 <p align="center">Hafis Akbar Anugrah - 103112400125</p>
 
 ## Dasar Teori
@@ -212,9 +212,8 @@ int main() {
 
 > Output
 > ![Screenshot bagian x](Output/soal1.png)
-> %% Untuk mencantumkan screenshot, tidak boleh ada spasi di urlnya `()`, penamaan file bebas asal gak sara dan mudah dipahami aja,, dan jangan lupa hapus komen ini yah%%
 
-Penjelasan ttg kode kalian disini
+Penjelasan : Program ini menghitung penjumlahan, pengurangan, perkalian, dan pembagian dari dua bilangan. Jika pembaginya nol, ditampilkan pesan error. Konsep: operator aritmatika, if, input-output.
 
 ### Soal 2
 
@@ -257,24 +256,47 @@ int main() {
 > Output
 > ![Screenshot bagian x](Output/soal2.png)
 
-penjelasan kode
+Penjelasan : Mengubah angka 0–100 menjadi bentuk kata (misal: 15 → “lima belas”). Program pakai fungsi terbilang(), array string, dan if-else untuk menentukan aturan penulisan.
 
 Kalau adalanjutan di lanjut disini aja
 
 soal nomor 2B
 
 ```go
-package main
+#include <iostream>
+using namespace std;
 
-func main() {
-	fmt.Println("kode untuk soal nomor 2B")
+int main() {
+    int n;
+    cout << "Masukkan angka n: ";
+    cin >> n;
+
+    for (int i = n; i >= 0; i--) {
+        if (i == 0) {
+            cout << "*" << endl;
+        } else {
+            // bagian kiri (turun)
+            for (int j = i; j >= 1; j--) {
+                cout << j << " ";
+            }
+            cout << "* ";
+            // bagian kanan (naik)
+            for (int j = 1; j <= i; j++) {
+                cout << j << " ";
+            }
+            cout << endl;
+        }
+    }
+
+    return 0;
 }
+
 ```
 
 > Output
-> ![Screenshot bagian x](output/screenshot_soal2B.png)
+> ![Screenshot bagian x](Output/soal3.png)
 
-penjelasan bedanya sesuai soal
+Penjelasan : Mencetak pola angka menurun di kiri, bintang di tengah, lalu angka menaik di kanan. Menggunakan perulangan bersarang (nested loop) dan if untuk baris terakhir.
 
 ## Referensi
 
