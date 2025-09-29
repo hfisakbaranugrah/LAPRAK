@@ -3,8 +3,7 @@
 
 ## Dasar Teori
 
-yang panjang dikit
-
+Dalam bahasa C++, ada sejumlah konsep fundamental yang biasanya dipelajari sejak awal. Struct dipakai untuk mengelompokkan beberapa variabel dengan tipe data yang berbeda ke dalam satu kesatuan, sehingga pengelolaan data jadi lebih teratur. Operator aritmatika seperti +, -, *, /, dan % digunakan untuk melakukan perhitungan matematika pada program. Percabangan (if, else if, else, atau switch) memungkinkan program mengambil keputusan dan mengeksekusi bagian kode tertentu sesuai dengan kondisi yang terpenuhi. Perulangan (for, while, do while) berfungsi untuk menjalankan potongan kode berkali-kali tanpa harus menuliskannya berulang. Sedangkan fungsi merupakan sekumpulan perintah yang dikemas dalam satu blok dan bisa dipanggil kapan saja, sehingga kode lebih tersusun rapi, mudah dipahami, dan bisa digunakan kembali.
 ## Unguided
 
 ### soal 1
@@ -18,13 +17,29 @@ aku mengerjakan perulangan
 copy paste soal nomor 1 disini
 
 ```go
-package main
+#include <iostream>
+using namespace std;
 
-func main() {
-	fmt.Println("Kode kalian disini")
-	fmt.Println("JANGAN MASUKIN >>SCREENSHOT<< KODE KALIAN DISINI")
-	fmt.Println("KALAU ADA -20 POIN LAPRAK")
+int main() {
+    float a, b;
+    cout << "Masukkan bilangan pertama: ";
+    cin >> a;
+    cout << "Masukkan bilangan kedua: ";
+    cin >> b;
+
+    cout << "\nHasil operasi:" << endl;
+    cout << "Penjumlahan : " << a + b << endl;
+    cout << "Pengurangan : " << a - b << endl;
+    cout << "Perkalian   : " << a * b << endl;
+    if (b != 0) {
+        cout << "Pembagian   : " << a / b << endl;
+    } else {
+        cout << "Pembagian   : Tidak bisa (pembagi = 0)" << endl;
+    }
+
+    return 0;
 }
+
 ```
 
 > Output
