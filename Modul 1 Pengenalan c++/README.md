@@ -256,7 +256,7 @@ int main() {
 > Output
 > ![Screenshot bagian x](Output/soal2.png)
 
-Penjelasan : Mengubah angka 0–100 menjadi bentuk kata (misal: 15 → “lima belas”). Program pakai fungsi terbilang(), array string, dan if-else untuk menentukan aturan penulisan.
+Penjelasan : Mengubah angka 0 sampai 100 menjadi bentuk kata (misal: 15 → “lima belas”). Program pakai fungsi terbilang(), array string, dan if-else untuk menentukan aturan penulisan.
 
 Kalau adalanjutan di lanjut disini aja
 
@@ -300,4 +300,5 @@ Penjelasan : Mencetak pola angka menurun di kiri, bintang di tengah, lalu angka 
 
 ## Referensi
 
-1. https://en.wikipedia.org/wiki/Data_structure (diakses blablabla)
+1. https://www.w3schools.com/cpp/cpp_for_loop.asp
+2. https://www.w3schools.com/cpp/cpp_conditions.asp
