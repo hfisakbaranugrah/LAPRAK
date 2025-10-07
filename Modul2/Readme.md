@@ -235,7 +235,7 @@ int main() {
 ```
 
 > Output
-> ![Screenshot bagian x](.png)
+> ![Screenshot bagian x](output/SOAL1.png)
 
 Penjelasan ttg kode kalian disini
 Program ini menampilkan cara membuat matriks berukuran 3x3 dengan elemen bernilai 1 hingga 9, lalu menghasilkan matriks transpose dengan menukar posisi baris dan kolom menggunakan perulangan bersarang. Proses utama transposisi terdapat pada baris kode transpose[j][i] = matriks[i][j], di mana indeks i dan j saling ditukar. Dengan demikian, elemen yang semula berada di baris ke-i kolom ke-j akan berpindah ke baris ke-j kolom ke-i. Hasil akhirnya, matriks awal dengan baris 1-2-3, 4-5-6, 7-8-9 berubah menjadi matriks dengan kolom 1-4-7, 2-5-8, dan 3-6-9.
@@ -277,7 +277,7 @@ int main() {
 ```
 
 > Output
-> ![Screenshot bagian x](.png)
+> ![Screenshot bagian x](output/SOAL2.png)
 
 penjelasan kode
 Program ini memperlihatkan bagaimana perbedaan antara pengiriman parameter biasa dan menggunakan referensi. Saat symbol & ditambahkan pada parameter angka di fungsi kuadratkan, fungsi tersebut menerima alamat memori dari variable nilai, bukan hanya nilainya. Karena itu, Ketika perintah angka = angka * angka dijalankan di dalam fungsi, perubahan langsung mempengaruhi variable asli nilai di fungsi main. Hasilnya, nilai nilai yang awalnya 5 berubah menjadi 25 secara langsung, bukan hanya pada Salinan sementara.
