@@ -3,284 +3,165 @@
 <p align="center">Hafis Akbar Anugrah - 103112400125</p>
 
 ## Dasar Teori
-Abstract Data Type (ADT) merupakan konsep dalam pemrograman yang mendefinisikan sebuah tipe data beserta sekumpulan operasi primitif yang dapat dilakukan pada tipe data tersebut, tanpa mengekspos detail implementasi internalnya. ADT berfokus pada "apa" yang dilakukan oleh operasi tersebut而不是 "bagaimana" cara melakukannya, sehingga memisahkan antara spesifikasi perilaku dengan implementasi nyata. Dalam implementasinya, ADT biasanya direalisasikan menjadi dua modul utama: file header (.h) yang berisi deklarasi tipe data dan prototipe fungsi/prosedur, serta file implementasi (.cpp) yang berisi kode detail dari setiap operasi primitif. Konsep ini memungkinkan pengguna untuk berinteraksi dengan tipe data hanya melalui antarmuka yang telah ditentukan, meningkatkan modularitas, abstraksi, dan kemudahan maintenance dalam pengembangan perangkat lunak. PARAFRASE TETAPI PENJELASANNYA TTP SAMA UBAH BAHASANYA SAJA
+Abstract Data Type (ADT) adalah konsep dalam pemrograman yang mendefinisikan suatu tipe data beserta kumpulan operasi dasar yang dapat dilakukan terhadapnya, tanpa memperlihatkan detail implementasi di dalamnya. Fokus utama ADT terletak pada “apa yang dilakukan” oleh operasi, bukan “bagaimana cara melakukannya”, sehingga terdapat pemisahan jelas antara spesifikasi perilaku dan implementasi aktual. Dalam penerapannya, ADT umumnya dibagi menjadi dua bagian utama: file header (.h) yang memuat deklarasi tipe data serta prototipe fungsi/prosedur, dan file implementasi (.cpp) yang berisi kode lengkap dari setiap operasi yang didefinisikan. Dengan pendekatan ini, pengguna dapat menggunakan tipe data melalui antarmuka yang telah ditentukan tanpa perlu memahami detail internalnya. Hal ini mendukung prinsip modularitas, abstraksi, dan kemudahan pemeliharaan dalam pengembangan perangkat lunak.
 ## Guide
 
-## 01_ARRAY
+## Menghitung rata rata mahasiswa.h
 ```go
+#ifndef MAHASISWA_H_INCLUDED
+#define MAHASISWA_H_INCLUDED
+
+struct mahasiswa
+{
+    char nim[10];
+    int nilai1, nilai2;
+};
+
+void inputMhs(mahasiswa &m);
+float rata2(mahasiswa m);
+
+#endif
+
+```
+
+## Mahasiswa.cpp
+```go
+#include "mahasiswa.h"
 #include <iostream>
 using namespace std;
 
-int main() {
+void inputMhs(mahasiswa &m)
+{
+    cout << "input nama = ";
+    cin >> (m) .nim;
+    cout << "input nilai = ";
+    cin >> (m) .nilai1;
+    cout << "input niali2 = ";
+    cin >> m .nilai2;
 
-    int nilai[5] = {1, 2, 3, 4, 5};
-
-    for ( int i = 0;  i < 5; i++)
-    {
-       
-        cout << "elemen ke-" << i << "=" << nilai[i] << endl;
-    }
-    return 0;
 }
+float rata2(mahasiswa m)
+{
+    return float(m.nilai1 + m.nilai2) / 2;
+
 ```
 
-## 02_ARRAY
+## main.cpp
 ```go
 #include <iostream>
+#include "mahasiswa.h"
 using namespace std;
 
-int main() {
-    int matrik[3][3] = {
-        {1, 2, 3},
-        {4, 5, 6},
-        {7, 8, 9}
-    };
-
-    for (int i = 0; i < 3; ++i) {
-        for (int j = 0; j < 3; ++j) {
-            cout << matrik[i][j] << " ";
-        }
-        cout << endl;
-    }
-
-    return 0;
-}
-```
-
-## 03_POINTER
-```go
-#include <iostream>
-using namespace std;
-
-int main()
-{
-    int umur = 25;
-    int *p_umur;
-
-    p_umur = &umur;
-
-    cout << "Nilai 'umur' : " << umur << endl;
-    cout << "Alamat memori 'umur' : " << &umur << endl;
-    cout << "Nilai 'p_umur' (alamat) : " << p_umur << endl;
-    cout << "Nilai yang diakses 'p_umur' : " << *p_umur << endl;
-    cout << "Alamat memori dari pointer 'p_umur' itu sendiri : " << &p_umur << endl;
-
-    return 0;
-}
-```
-
-## 04_ARRAY POINTER
-```go
-#include <iostream>
-using namespace std;
-
-int main()
-{
-    int data[5] = {10, 20, 30, 40, 50};
-    int *p_data = data;
-
-    cout << "Mengakses elemen array cara normal:" << endl;
-
-    for (int i = 0; i < 5; ++i)
-    {
-        cout << "Nilai elemen ke-" << i << " : " << data[i] << endl;
-    }
-
-    cout << "Mengakses elemen array menggunakan pointer:" << endl;
-
-    for (int i = 0; i < 5; ++i)
-    {
-        cout << "Nilai elemen ke-" << i << " : " << *(p_data + i) << endl;
-    }
-
-    return 0;
-}
-```
-
-## 05_STRING POINTER
-```go
-#include <iostream>
-using namespace std;
-
-int main()
-{
-    char pesan_array[] = "Nasi Padang";
-    char *pesan_pointer = "Ayam Bakar 23";
-
-    cout << "String Array: " << pesan_array << endl;
-    cout << "String Pointer: " << pesan_pointer << endl;
-
-    // Mengubah karakter dalam array diperbolehkan
-    pesan_array[0] = 'h';
-    cout << "String Array setelah diubah: " << pesan_array << endl;
-
-    // Pointer dapat diubah untuk menunjuk ke string lain
-    pesan_pointer = "Sariman";
-    cout << "String Pointer setelah menunjuk ke string lain: " << pesan_pointer << endl;
-
-    return 0;
-}
-```
-
-## 06_
-```go
-
-```
-
-## 07_CALL BY POINTER
-```go
-#include <iostream>
-using namespace std;
-
-int main()
-{
-    int a = 10, b = 20;
-    cout << "Sebelum ditukar: a = " << a << ", b = " << b << endl;
-    tukar(&a, &b);
-    cout << "Setelah ditukar: a = " << a << ", b = " << b << endl;
+int main(){
+    mahasiswa mhs;
+    inputMhs(mhs);
+    cout << "rata rata = " << rata2(mhs);
     return 0;
 }
 
-void tukar(int *px, int *py)
-{
-    int temp = *px;
-    *px = *py;
-    *py = temp;
-}
 ```
 
-## 08_CALL BY REFERENSI
-```go
-#include <iostream>
-using namespace std;
 
-int main()
-{
-    int a = 10, b = 20;
-    cout << "Sebelum ditukar: a = " << a << ", b = " << b << endl;
-    tukar(a, b);
-    cout << "Setelah ditukar: a = " << a << ", b = " << b << endl;
-    return 0;
-}
-
-void tukar(int &x, int &y)
-{
-    int temp = x;
-    x = y;
-    y = temp;
-}
-```
-
-## Unguided
-
-### soal 1
-1. Buatlah sebuah program untuk melakukan transpose pada sebuah matriks persegi berukuran 3x3. Operasi transpose adalah mengubah baris menjadi kolom dan sebaliknya. Inisialisasi matriks awal di dalam kode, kemudian buat logika untuk melakukan transpose dan simpan hasilnya ke dalam matriks baru. Terakhir, tampilkan matriks awal dan matriks hasil transpose.
-
-Contoh Output:
-
-Matriks Awal:
-
-1 2 3
-
-4 5 6
-
-7 8 9
-
-Matriks Hasil Transpose:
-
-1 4 7
-
-2 5 8
-
-3 6 9
+## Unguide
 
 ### Soal 1
 
+Buat program yang dapat menyimpan data mahasiswa (max. 10) ke dalam sebuah array
+dengan field nama, nim, uts, uas, tugas, dan nilai akhir. Nilai akhir diperoleh dari FUNGSI
+dengan rumus 0.3*uts+0.4*uas+0.3*tugas.
 ```go
 #include <iostream>
+#include <string>
+#include <iomanip>
+#include <limits>
 using namespace std;
 
+struct Mahasiswa {
+    string nama;
+    string nim;
+    float uts;
+    float uas;
+    float tugas;
+    float nilaiAkhir;
+};
+
+float hitungNilaiAkhir(float uts, float uas, float tugas) {
+    return 0.3f * uts + 0.4f * uas + 0.3f * tugas;
+}
+
 int main() {
-    // Inisialisasi matriks awal 3x3
-    int matriks[3][3] = {{1, 2, 3}, {4, 5, 6}, {7, 8, 9}};
-    int transpose[3][3];
-    
-    // Menampilkan matriks awal
-    cout << "Matriks Awal:" << endl;
-    for (int i = 0; i < 3; i++) {
-        for (int j = 0; j < 3; j++) {
-            cout << matriks[i][j] << " ";
+    Mahasiswa mhs[10];
+    int n = 0;
+    while (true) {
+        cout << "\n1. Tambah data\n2. Tampilkan data\n3. Keluar\nPilih menu: ";
+        int pilihan;
+        if (!(cin >> pilihan)) {
+            cin.clear();
+            cin.ignore(numeric_limits<streamsize>::max(), '\n');
+            cout << "Input tidak valid.\n";
+            continue;
         }
-        cout << endl;
-    }
-    
-    // Melakukan operasi transpose
-    for (int i = 0; i < 3; i++) {
-        for (int j = 0; j < 3; j++) {
-            transpose[j][i] = matriks[i][j];
+
+        if (pilihan == 1) {
+            if (n >= 10) {
+                cout << "Data penuh (maks 10 mahasiswa).\n";
+                continue;
+            }
+            cin.ignore(numeric_limits<streamsize>::max(), '\n');
+            cout << "Nama   : ";
+            getline(cin, mhs[n].nama);
+            cout << "NIM    : ";
+            getline(cin, mhs[n].nim);
+            cout << "Nilai UTS  : ";
+            while (!(cin >> mhs[n].uts)) {
+                cin.clear();
+                cin.ignore(numeric_limits<streamsize>::max(), '\n');
+                cout << "Masukkan angka untuk UTS: ";
+            }
+            cout << "Nilai UAS  : ";
+            while (!(cin >> mhs[n].uas)) {
+                cin.clear();
+                cin.ignore(numeric_limits<streamsize>::max(), '\n');
+                cout << "Masukkan angka untuk UAS: ";
+            }
+            cout << "Nilai Tugas: ";
+            while (!(cin >> mhs[n].tugas)) {
+                cin.clear();
+                cin.ignore(numeric_limits<streamsize>::max(), '\n');
+                cout << "Masukkan angka untuk Tugas: ";
+            }
+            mhs[n].nilaiAkhir = hitungNilaiAkhir(mhs[n].uts, mhs[n].uas, mhs[n].tugas);
+            n++;
+            cin.ignore(numeric_limits<streamsize>::max(), '\n');
+            cout << "Data berhasil ditambah.\n";
+        } else if (pilihan == 2) {
+            if (n == 0) {
+                cout << "Belum ada data.\n";
+                continue;
+            }
+            cout << "\nDaftar Nilai Mahasiswa\n";
+            cout << left << setw(4) << "No" << setw(25) << "Nama" << setw(12) << "NIM" << setw(10) << "NilaiAkhir" << '\n';
+            cout << string(55, '-') << '\n';
+            cout << fixed << setprecision(2);
+            for (int i = 0; i < n; ++i) {
+                cout << left << setw(4) << (i + 1)
+                     << setw(25) << mhs[i].nama
+                     << setw(12) << mhs[i].nim
+                     << setw(10) << mhs[i].nilaiAkhir << '\n';
+            }
+        } else if (pilihan == 3) {
+            cout << "Keluar.\n";
+            break;
+        } else {
+            cout << "Pilihan tidak tersedia.\n";
         }
     }
-    
-    // Menampilkan matriks hasil transpose
-    cout << "\nMatriks Hasil Transpose:" << endl;
-    for (int i = 0; i < 3; i++) {
-        for (int j = 0; j < 3; j++) {
-            cout << transpose[i][j] << " ";
-        }
-        cout << endl;
-    }
-    
     return 0;
 }
 ```
 
 > Output
-> ![Screenshot bagian x](output/SOAL1.png)
-
-Penjelasan ttg kode kalian disini
-Program ini menampilkan cara membuat matriks berukuran 3x3 dengan elemen bernilai 1 hingga 9, lalu menghasilkan matriks transpose dengan menukar posisi baris dan kolom menggunakan perulangan bersarang. Proses utama transposisi terdapat pada baris kode transpose[j][i] = matriks[i][j], di mana indeks i dan j saling ditukar. Dengan demikian, elemen yang semula berada di baris ke-i kolom ke-j akan berpindah ke baris ke-j kolom ke-i. Hasil akhirnya, matriks awal dengan baris 1-2-3, 4-5-6, 7-8-9 berubah menjadi matriks dengan kolom 1-4-7, 2-5-8, dan 3-6-9.
-
-
-### Soal 2
-2. Buatlah program yang menunjukkan penggunaan call by reference. Buat sebuah prosedur bernama kuadratkan yang menerima satu parameter integer secara referensi (&). Prosedur ini akan mengubah nilai asli variabel yang dilewatkan dengan nilai kuadratnya. Tampilkan nilai variabel di main() sebelum dan sesudah memanggil prosedur untuk membuktikan perubahannya. 
-
-Contoh Output:
-
-Nilai awal: 5
-Nilai setelah dikuadratkan: 25
-soal nomor 2A
-
-```go
-#include <iostream>
-using namespace std;
-
-// Prosedur dengan parameter referensi
-void kuadratkan(int &angka) {
-    angka = angka * angka; // Mengubah nilai asli variabel
-}
-
-
-int main() {
-    int nilai = 5;
-    
-    // Menampilkan nilai sebelum diproses
-    cout << "Nilai awal: " << nilai << endl;
-    
-    // Memanggil prosedur dengan passing by reference
-    kuadratkan(nilai);
-    
-    // Menampilkan nilai setelah diproses
-    cout << "Nilai setelah dikuadratkan: " << nilai << endl;
-    
-    return 0;
-}
-```
-
-> Output
-> ![Screenshot bagian x](output/SOAL2.png)
-
-penjelasan kode
-Program ini memperlihatkan bagaimana perbedaan antara pengiriman parameter biasa dan menggunakan referensi. Saat symbol & ditambahkan pada parameter angka di fungsi kuadratkan, fungsi tersebut menerima alamat memori dari variable nilai, bukan hanya nilainya. Karena itu, Ketika perintah angka = angka * angka dijalankan di dalam fungsi, perubahan langsung mempengaruhi variable asli nilai di fungsi main. Hasilnya, nilai nilai yang awalnya 5 berubah menjadi 25 secara langsung, bukan hanya pada Salinan sementara.
+> ![Screenshot bagian x](Output/Output_no1.png)
 
 ## Referensi
 
