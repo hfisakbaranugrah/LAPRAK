@@ -162,6 +162,79 @@ int main() {
 
 > Output
 > ![Screenshot bagian x](output/Soal1.png)
+### Soal 2
+Buatlah ADT Pelajaran sebagai berikut di dalam file "pelajaran.h"
+```go
+goType pelajaran <
+namaMapel : string
+kodeMapel : string
+>
+function create_pelajaran( namapel : string,
+kodepel : string ) → pelajaran
+procedure tampil_pelajaran( input pel : pelajaran )
+```
+Buatlah implementasi ADT pelajaran pada file “pelajaran.cpp”
+
+Cobalah hasil implementasi ADT pada file “main.cpp”
+# pelajaran.h
+```go
+#ifndef PELAJARAN_H_INCLUDED
+#define PELAJARAN_H_INCLUDED
+#include <string>
+using namespace std;
+
+struct Pelajaran {
+    string namaMapel;
+    string kodeMapel;
+};
+
+Pelajaran create_pelajaran(string namapel, string kodepel);
+void tampil_pelajaran(Pelajaran pel);
+
+#endif
+```
+
+# pelajaran.cpp
+```go
+#include <iostream>
+#include "pelajaran.h"
+using namespace std;
+
+Pelajaran create_pelajaran(string namapel, string kodepel) {
+    Pelajaran p;
+    p.namaMapel = namapel;
+    p.kodeMapel = kodepel;
+    return p;
+}
+
+void tampil_pelajaran(Pelajaran pel) {
+    cout << "nama pelajaran : " << pel.namaMapel << endl;
+    cout << "nilai : " << pel.kodeMapel << endl;
+}
+```
+
+# main.cpp
+```go
+#include <iostream>
+#include "pelajaran.h"
+using namespace std;
+
+int main() {
+    string namapel = "Struktur Data";
+    string kodepel = "STD";
+
+    Pelajaran pel = create_pelajaran(namapel, kodepel);
+    tampil_pelajaran(pel);
+
+    return 0;
+}
+```
+
+> Output
+> ![Screenshot bagian x](Output/Output_no2.png)
+
+Program ini merupakan penerapan konsep **Abstract Data Type (ADT)** dalam bahasa C++, yang memisahkan antara *definisi tipe data*, *implementasi fungsi*, dan *pengujian program utama*. Pada file **`pelajaran.h`**, didefinisikan tipe data `struct Pelajaran` yang memiliki dua atribut yaitu `namaMapel` dan `kodeMapel`, serta deklarasi dua fungsi `create_pelajaran()` dan `tampil_pelajaran()`. File **`pelajaran.cpp`** berisi implementasi fungsi-fungsi tersebut, di mana `create_pelajaran()` berfungsi sebagai *konstruktor* untuk membuat objek pelajaran baru dengan mengisi nama dan kode, sedangkan `tampil_pelajaran()` digunakan untuk menampilkan data pelajaran ke layar. File **`main.cpp`** berperan sebagai program utama yang menguji ADT dengan membuat objek pelajaran menggunakan fungsi `create_pelajaran()` dan menampilkannya melalui `tampil_pelajaran()`. Dengan pembagian ini, program menjadi lebih modular, mudah dikelola, serta mencerminkan penerapan prinsip dasar ADT, yaitu pemisahan antara spesifikasi dan implementasi.
+
 
 ## Referensi
 
