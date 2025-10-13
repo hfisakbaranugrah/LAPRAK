@@ -246,10 +246,77 @@ Buatlah program dengan ketentuan :
 - fungsi/prosedur yang akan menukarkan isi dari 2 array integer 2D pada posisi tertentu
 - fungsi/prosedur yang akan menukarkan isi dari variabel yang ditunjuk oleh 2 buah
 pointer
-```
 
+```
+#include <iostream>
+using namespace std;
+
+void tampilArray(int A[3][3]) {
+    for (int i = 0; i < 3; i++) {
+        for (int j = 0; j < 3; j++) {
+            cout << A[i][j] << " ";
+        }
+        cout << endl;
+    }
+}
+
+void tukarPosisi(int A[3][3], int B[3][3], int baris, int kolom) {
+    int temp = A[baris][kolom];
+    A[baris][kolom] = B[baris][kolom];
+    B[baris][kolom] = temp;
+}
+
+void tukarPointer(int *p1, int *p2) {
+    int temp = *p1;
+    *p1 = *p2;
+    *p2 = temp;
+}
+
+int main() {
+    int A[3][3] = { {1, 2, 3},
+                    {4, 5, 6},
+                    {7, 8, 9} };
+
+    int B[3][3] = { {10, 11, 12},
+                    {13, 14, 15},
+                    {16, 17, 18} };
+
+    int x = 100, y = 200;
+    int *p1 = &x;
+    int *p2 = &y;
+
+    cout << "Array A sebelum ditukar:\n";
+    tampilArray(A);
+    cout << "\nArray B sebelum ditukar:\n";
+    tampilArray(B);
+
+    cout << "\nMenukar elemen pada baris 1 kolom 2...\n";
+    tukarPosisi(A, B, 1, 2);
+
+    cout << "\nArray A sesudah ditukar:\n";
+    tampilArray(A);
+    cout << "\nArray B sesudah ditukar:\n";
+    tampilArray(B);
+
+    cout << "\nNilai sebelum tukar pointer:\n";
+    cout << "x = " << *p1 << ", y = " << *p2 << endl;
+
+    tukarPointer(p1, p2);
+
+    cout << "Nilai sesudah tukar pointer:\n";
+    cout << "x = " << *p1 << ", y = " << *p2 << endl;
+
+    return 0;
+}
+```
+> Output
+> ![Screenshot bagian x](output/Soal3.png)
+
+Program di atas merupakan program C++ yang menggunakan **array 2 dimensi dan pointer** untuk mendemonstrasikan konsep pertukaran nilai. Program diawali dengan deklarasi dua buah array 2D berukuran 3x3 bernama `A` dan `B`, masing-masing berisi nilai-nilai berbeda. Fungsi `tampilArray()` digunakan untuk menampilkan isi dari sebuah array 3x3 ke layar. Fungsi `tukarPosisi()` berfungsi untuk menukar elemen pada posisi tertentu antara dua array, misalnya elemen di baris ke-1 dan kolom ke-2 dari `A` ditukar dengan elemen di posisi yang sama pada `B`. Selain itu, terdapat fungsi `tukarPointer()` yang menukar nilai dari dua variabel melalui pointer. Pada fungsi `main()`, program menampilkan isi awal kedua array, kemudian melakukan pertukaran elemen dengan `tukarPosisi()`, lalu menampilkan hasil setelah pertukaran. Selanjutnya, dua variabel `x` dan `y` yang diakses melalui pointer `p1` dan `p2` juga ditukar nilainya menggunakan fungsi `tukarPointer()`. Hasil akhirnya menunjukkan bahwa elemen array serta nilai variabel berhasil ditukar sesuai instruksi, menggambarkan penggunaan fungsi, array 2D, dan pointer dalam satu program yang terstruktur.
 
 ## Referensi
 
-1. [https://www.w3schools.com/cpp/exercise.asp?x=xrcise_function_reference1](https://www.w3schools.com/cpp/exercise.asp?x=xrcise_function_reference1)
-2. [https://www.w3schools.com/cpp/cpp_function_param.asp](https://www.w3schools.com/cpp/cpp_function_param.asp)
+1. https://www.w3schools.com/dsa/dsa_intro.php
+2. https://www.w3schools.com/cpp/cpp_data_structures.asp
+3. https://www.w3schools.com/cpp/cpp_structs.asp
+4. https://www.w3schools.com/cpp/cpp_data_types.asp
