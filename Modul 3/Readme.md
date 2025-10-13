@@ -231,9 +231,22 @@ int main() {
 ```
 
 > Output
-> ![Screenshot bagian x](Output/Output_no2.png)
+> ![Screenshot bagian x](output/main.cpp.png)
 
-Program ini merupakan penerapan konsep **Abstract Data Type (ADT)** dalam bahasa C++, yang memisahkan antara *definisi tipe data*, *implementasi fungsi*, dan *pengujian program utama*. Pada file **`pelajaran.h`**, didefinisikan tipe data `struct Pelajaran` yang memiliki dua atribut yaitu `namaMapel` dan `kodeMapel`, serta deklarasi dua fungsi `create_pelajaran()` dan `tampil_pelajaran()`. File **`pelajaran.cpp`** berisi implementasi fungsi-fungsi tersebut, di mana `create_pelajaran()` berfungsi sebagai *konstruktor* untuk membuat objek pelajaran baru dengan mengisi nama dan kode, sedangkan `tampil_pelajaran()` digunakan untuk menampilkan data pelajaran ke layar. File **`main.cpp`** berperan sebagai program utama yang menguji ADT dengan membuat objek pelajaran menggunakan fungsi `create_pelajaran()` dan menampilkannya melalui `tampil_pelajaran()`. Dengan pembagian ini, program menjadi lebih modular, mudah dikelola, serta mencerminkan penerapan prinsip dasar ADT, yaitu pemisahan antara spesifikasi dan implementasi.
+Program ini merupakan contoh penerapan **konsep Abstract Data Type (ADT)** dalam bahasa C++, di mana terdapat pemisahan antara **definisi tipe data**, **implementasi fungsi**, dan **program utama untuk pengujian**.
+Pada file **pelajaran.h**, dideklarasikan tipe data `struct Pelajaran` dengan dua atribut, yaitu `namaMapel` dan `kodeMapel`, serta deklarasi dua fungsi, `create_pelajaran()` dan `tampil_pelajaran()`.
+File **pelajaran.cpp** berisi **realisasi dari fungsi-fungsi tersebut** — `create_pelajaran()` berfungsi membuat objek pelajaran baru dengan mengisi nama dan kode, sedangkan `tampil_pelajaran()` digunakan untuk menampilkan informasi pelajaran.
+File **main.cpp** berperan sebagai **program utama** yang menguji ADT dengan membuat dan menampilkan objek pelajaran menggunakan fungsi yang telah didefinisikan.
+Struktur seperti ini menjadikan program **lebih terorganisir, mudah dikembangkan**, dan sesuai dengan **prinsip utama ADT**, yaitu pemisahan antara **spesifikasi** dan **implementasi**.
+
+### Soal 3
+Buatlah program dengan ketentuan :
+- 2 buah array 2D integer berukuran 3x3 dan 2 buah pointer integer
+- fungsi/prosedur yang menampilkan isi sebuah array integer 2D
+- fungsi/prosedur yang akan menukarkan isi dari 2 array integer 2D pada posisi tertentu
+- fungsi/prosedur yang akan menukarkan isi dari variabel yang ditunjuk oleh 2 buah
+pointer
+```
 
 
 ## Referensi
