@@ -161,7 +161,7 @@ int main() {
 ```
 
 > Output
-> ![Screenshot bagian x](Output/Output_no1.png)
+> ![Screenshot bagian x](output/Soal1.png)
 
 ## Referensi
 
