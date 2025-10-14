@@ -206,17 +206,17 @@ void tambahAntrian(const string& nama, const string& pesanan) {
         tail = baru;
     }
 
-    cout << "\n✅ " << nama << " dengan pesanan '" << pesanan << "' telah ditambahkan ke antrian.\n";
+    cout << "\n " << nama << " dengan pesanan '" << pesanan << "' telah ditambahkan ke antrian.\n";
 }
 
 void layaniAntrian() {
     if (kosong()) {
-        cout << "\n⚠️  Antrian masih kosong!\n";
+        cout << "\n  Antrian masih kosong!\n";
         return;
     }
 
     Node* hapus = head;
-    cout << "\n👨‍🍳 Melayani pembeli: " << hapus->nama 
+    cout << "\n Melayani pembeli: " << hapus->nama 
          << " (Pesanan: " << hapus->pesanan << ")\n";
     head = head->next;
     delete hapus;
@@ -226,7 +226,7 @@ void layaniAntrian() {
 
 void tampilkanAntrian() {
     if (kosong()) {
-        cout << "\n⚠️  Tidak ada antrian saat ini.\n";
+        cout << "\n Tidak ada antrian saat ini.\n";
         return;
     }
 
@@ -293,7 +293,7 @@ int main() {
 }
 ```
 > Output
-> ![Screenshot bagian x](output/.png)
+> ![Screenshot bagian x](output/Soalsiji.png)
 
 Program di atas merupakan implementasi **antrian pembeli** menggunakan **Singly Linked List** dalam bahasa C++. Setiap elemen antrian disimpan dalam node yang berisi nama pembeli dan pesanan. Program menyediakan beberapa fungsi utama, yaitu menambah antrian baru di bagian belakang (enqueue), melayani antrian dengan menghapus data dari bagian depan (dequeue), menampilkan seluruh antrian yang sedang menunggu, serta menghitung jumlah antrian yang ada. Proses antrian bersifat **FIFO (First In, First Out)**, artinya pembeli yang datang lebih dulu akan dilayani terlebih dahulu. Program ini berjalan secara interaktif melalui menu yang dapat dipilih pengguna hingga memilih keluar.
 
@@ -369,7 +369,7 @@ int main() {
 ```
 
 > Output
-> ![Screenshot bagian x](Output/Output_no2.png)
+> ![Screenshot bagian x](output/Soalloro.png)
 
 Program di atas berfungsi untuk **membalik urutan data** pada **Singly Linked List**. Awalnya, program membuat list berisi data `1 → 2 → 3`. Fungsi `tambahNode()` digunakan untuk menambahkan node baru di akhir list, sedangkan `tampilList()` menampilkan isi list dari awal hingga akhir. Proses pembalikan dilakukan oleh fungsi `balikList()`, yang menggunakan tiga pointer: `prev`, `curr`, dan `next`. Pointer `curr` berjalan dari awal list hingga akhir, sambil membalik arah pointer `next` setiap node agar menunjuk ke node sebelumnya (`prev`). Setelah semua pointer dibalik, `head` diarahkan ke node terakhir (yang menjadi node pertama setelah dibalik). Hasil akhirnya, list yang semula `1 → 2 → 3` berubah menjadi `3 → 2 → 1`.
 
