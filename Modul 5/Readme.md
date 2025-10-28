@@ -148,7 +148,7 @@ int main() {
 ```
 
 > Output
-> ![Screenshot bagian x](Output.png)
+> ![Screenshot bagian x](Output/Soall2.png)
 
 PENJELASAN
 
@@ -345,7 +345,7 @@ int main() {
 ```
 
 > Output
-> ![Screenshot bagian x](Output.png)
+> ![Screenshot bagian x](Output/Soall1.png)
 
 PENJELASAN
 ## Referensi
