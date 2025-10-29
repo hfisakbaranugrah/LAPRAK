@@ -530,9 +530,9 @@ int main() {
 ```
 
 > Output
-> ![Screenshot bagian x](Output/Soal1.png)
+> ![Screenshot bagian x](output/main.cpp.png)
 
-Program ini merupakan implementasi struktur data **Doubly Linked List** untuk menyimpan data kendaraan yang terdiri dari nomor polisi, warna, dan tahun pembuatan. Setiap data disimpan dalam node yang memiliki dua pointer (`next` dan `prev`) sehingga dapat ditelusuri maju dan mundur. Program memungkinkan pengguna menambahkan data kendaraan baru ke dalam list, namun terlebih dahulu memeriksa apakah nomor polisi sudah terdaftar menggunakan fungsi pencarian. Jika belum, data dimasukkan di bagian akhir list melalui prosedur `insertLast`. Setelah input selesai, seluruh data kendaraan ditampilkan ke layar dengan menelusuri list dari elemen terakhir ke awal menggunakan prosedur `printInfo`.
+Program ini menggunakan Doubly Linked List untuk menyimpan informasi kendaraan yang mencakup nomor polisi, warna, dan tahun pembuatan. Setiap data ditempatkan dalam node yang saling terhubung dua arah melalui pointer next dan prev, sehingga data bisa dibaca dari depan maupun dari belakang. Sebelum menambah data baru, program akan mengecek apakah nomor polisi tersebut sudah ada. Jika belum terdaftar, data akan disimpan di bagian akhir list menggunakan fungsi insertLast. Setelah semua data dimasukkan, program menampilkan seluruh isi list mulai dari elemen terakhir hingga awal dengan memanfaatkan prosedur printInfo.
 
 ## Referensi
 1. https://www.w3schools.com/dsa/dsa_theory_linkedlists.php
